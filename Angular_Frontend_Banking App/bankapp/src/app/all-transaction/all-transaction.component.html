@@ -1,0 +1,30 @@
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="table-responsive">
+    <table class="table table-hover  table-bordered border border-primary">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="text-center">Transaction ID</th>
+                <th scope="col" class="text-center">Amount</th>
+                <th scope="col" class="text-center">Action</th>
+                <th scope="col" colspan="4" class="text-center">Account Details</th>
+            </tr>
+           
+        </thead>
+        <tbody>
+
+                    <tr *ngFor="let transaction of alltransaction" [ngClass]="{'red-text':transaction.action==='withdraw','green-text':transaction.action!=='withdraw'}"> 
+
+
+                        <td scope="row" class="text-center">{{transaction.transcId}}</td>
+                        <td scope="row" class="text-center"> {{transaction.action==='deposit'?(transaction.amount|credit):(transaction.amount|debit)}}</td>
+                        <td scope="row" class="text-center">{{transaction.action}}</td>
+                        <td scope="row" class="text-center"><label>Account Id:</label>{{transaction.account.id}}<br>
+                            <label>Account Holder Name:</label>{{transaction.account.accountHolderName}}</td>
+
+
+                        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+        

@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      body {
+      background-image: url('../assets/images/seedbackground.jpg');
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 70vw;
+    }
+    </style>
+
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="assets/images/seed_logo.png" class="img-fluid" alt="Sample image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="username" formControlName="username" class="form-control form-control-lg"
+                  placeholder="Enter a valid email address" />
+                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+                  Username is required
+                </div>
+              </div>
+    
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <input type="password" id="password" formControlName="password" class="form-control form-control-lg"
+                  placeholder="Enter password" />
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                  Password is required
+                </div>
+              </div>
+    
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              </div>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

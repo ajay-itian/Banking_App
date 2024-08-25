@@ -1,0 +1,26 @@
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="table-responsive">
+    <table class="table table-hover  table-bordered border border-primary">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="text-center">ID</th>
+                <th scope="col" class="text-center">Account Holder Name</th>
+                <th scope="col" class="text-center">Balance</th>
+                <th scope="col" colspan="4" class="text-center">Action</th>
+            </tr>
+           
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                    <td scope="row" class="text-center">{{account.id}}</td>
+                    <td scope="row" class="text-center">{{account.accountHolderName|uppercase}}</td>
+                    <td scope="row" class="text-center">{{account.balance|currency:'INR'}}</td>
+                    <td scope="row" class="text-center"><button (click)="deposit(account.id)" class="btn btn-success" style="margin: 10px;">Deposit</button></td>
+                    <td class="text-center"><button (click)="withdraw(account.id)" class="btn btn-danger" style="margin: 10px;">Withdraw</button></td>
+                    <td scope="row" class="text-center"><button (click)="delete(account.id)" class="btn btn-danger" style="margin: 10px;">Delete</button> </td>
+                    <td scope="row" class="text-center"><button (click)="view(account.id)" class="btn btn-info" style="margin: 10px;">View</button></td>
+            </tr>
+        </tbody>
+      </table>
+   </div>
+</div>

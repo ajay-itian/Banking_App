@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="card bg-dark text-white">
+  <img class="card-img" src="assets/images/seed_logo.png" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Passbook</h5>
+   
+    </div>
+    </div>
+    
+<div class="card bg-dark text-white">
+ 
+    <p class="card-text text-center">Account Number: {{account.id}}</p>
+    <p class="card-text text-center">Account  Holder Name: {{account.accountHolderName|uppercase}}</p>
+    <p class="card-text text-center">Account Balance : {{account.balance|currency:'INR'}}</p>
+    <p class="card-text text-center">Created At : {{account.dateofbirth|date}}</p>
+    <p class="card-text text-center">Email : {{account.email}}</p>
+    <p class="card-text text-center">Date Of Birth : {{account.dateofcreate|date}}</p>
+    <p class="card-text text-center"><strong>House Name:</strong> {{ account.address.houseName }}</p>
+      <p class="card-text text-center"><strong>Street Name:</strong> {{ account.address.streetName }}</p>
+      <p class="card-text text-center"><strong>Area:</strong> {{ account.address.area }}</p>
+      <p class="card-text text-center"><strong>City:</strong> {{ account.address.city }}</p>
+      <p class="card-text text-center"><strong>District:</strong> {{ account.address.district }}</p>
+      <p class="card-text text-center"><strong>State:</strong> {{ account.address.state }}</p>
+      <p class="card-text text-center"><strong>Country:</strong> {{ account.address.country }}</p>
+      <p class="card-text text-center"><strong>Pincode:</strong> {{ account.address.pincode }}</p>
+    </div>
